@@ -3,7 +3,8 @@
 const DEFAULT_RULES = {
   preferred: ['greenhouse.io', 'lever.co', 'ashbyhq.com'],
   warning: ['myworkdayjobs.com', 'successfactors.com', 'ultipro.com'],
-  blocked: []
+  blocked: [],
+  company: ['careers', 'jobs', 'apply']
 };
 
 let highlightRules = DEFAULT_RULES;
@@ -30,8 +31,8 @@ function matchesRule(url, domains) {
 
 function highlightLinks() {
   // Remove existing highlights
-  document.querySelectorAll('.job-highlight-preferred, .job-highlight-warning, .job-highlight-blocked').forEach(el => {
-    el.classList.remove('job-highlight-preferred', 'job-highlight-warning', 'job-highlight-blocked');
+  document.querySelectorAll('.job-highlight-preferred, .job-highlight-warning, .job-highlight-blocked, .job-highlight-company').forEach(el => {
+    el.classList.remove('job-highlight-preferred', 'job-highlight-warning', 'job-highlight-blocked', 'job-highlight-company');
   });
 
   // Find all links
@@ -50,15 +51,24 @@ function highlightLinks() {
     }
 
     // Check against rules
-    if (matchesRule(fullUrl, highlightRules.blocked)) {
+    const isPreferred = matchesRule(fullUrl, highlightRules.preferred);
+    const isWarning = matchesRule(fullUrl, highlightRules.warning);
+    const isBlocked = matchesRule(fullUrl, highlightRules.blocked);
+    const isCompany = matchesRule(fullUrl, highlightRules.company);
+    
+    if (isBlocked) {
       link.classList.add('job-highlight-blocked');
       addBadge(link, '🚫', 'Blocked');
-    } else if (matchesRule(fullUrl, highlightRules.warning)) {
+    } else if (isWarning) {
       link.classList.add('job-highlight-warning');
       addBadge(link, '⚠️', 'Warning');
-    } else if (matchesRule(fullUrl, highlightRules.preferred)) {
+    } else if (isPreferred) {
       link.classList.add('job-highlight-preferred');
       addBadge(link, '✓', 'Preferred');
+    } else if (isCompany) {
+      // Only highlight as company page if it doesn't match any ATS
+      link.classList.add('job-highlight-company');
+      addBadge(link, '🏢', 'Company Page');
     }
   });
 }

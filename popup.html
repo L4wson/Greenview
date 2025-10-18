@@ -37,6 +37,7 @@
       min-height: 60px;
     }
     .preferred-area { border-color: #22c55e; }
+    .company-area { border-color: #3b82f6; }
     .warning-area { border-color: #fbbf24; }
     .blocked-area { border-color: #ef4444; }
     
@@ -71,10 +72,6 @@
       color: #166534;
     }
   </style>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
   <h2>Job Listing Highlighter</h2>
@@ -83,6 +80,12 @@
     <h3><span style="color: #22c55e;">✓</span> Preferred Sites</h3>
     <textarea id="preferred" class="preferred-area" placeholder="greenhouse.io&#10;lever.co&#10;ashbyhq.com"></textarea>
     <div class="help-text">Green highlight - Easy application process</div>
+  </div>
+
+  <div class="section">
+    <h3><span style="color: #3b82f6;">🏢</span> Company Pages</h3>
+    <textarea id="company" class="company-area" placeholder="careers&#10;jobs&#10;apply"></textarea>
+    <div class="help-text">Blue highlight - Direct company career pages</div>
   </div>
 
   <div class="section">
@@ -98,6 +101,7 @@
   </div>
 
   <button id="save">Save Settings</button>
+  <button id="reset" style="background-color: #6b7280; margin-top: 8px;">Reset to Defaults</button>
   <div id="status" class="status"></div>
 
   <script src="popup.js"></script>

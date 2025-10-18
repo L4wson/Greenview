@@ -35,6 +35,17 @@
   opacity: 0.8;
 }
 
+.job-highlight-company {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  border-left: 3px solid #3b82f6 !important;
+  padding-left: 8px !important;
+  transition: background-color 0.2s ease;
+}
+
+.job-highlight-company:hover {
+  background-color: rgba(59, 130, 246, 0.25) !important;
+}
+
 .job-badge {
   display: inline-block;
   margin-right: 6px;

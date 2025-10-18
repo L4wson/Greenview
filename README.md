@@ -5,6 +5,7 @@ A browser extension for Chrome and Firefox that automatically highlights job lis
 ## Features
 
 - 🟢 **Preferred Sites** - Highlights easy-to-use application platforms (Greenhouse, Lever, Ashby) in green
+- 🔵 **Company Pages** - Marks direct company career pages in blue for easy identification
 - 🟡 **Warning Sites** - Marks tedious application systems (Workday, SuccessFactors) in yellow
 - 🔴 **Blocked Sites** - Dims sites you want to avoid in red
 - 🎨 **Visual Badges** - Adds icons next to links for instant recognition
@@ -36,9 +37,10 @@ A browser extension for Chrome and Firefox that automatically highlights job lis
 ## Usage
 
 1. Click the extension icon in your browser toolbar
-2. Configure your URL patterns in three categories:
-   - **Preferred Sites**: Application platforms you like
-   - **Warning Sites**: Platforms with tedious processes
+2. Configure your URL patterns in four categories:
+   - **Preferred Sites**: Application platforms you like (e.g., Greenhouse, Lever)
+   - **Company Pages**: Direct company career sites (e.g., URLs with "careers", "jobs")
+   - **Warning Sites**: Platforms with tedious processes (e.g., Workday)
    - **Blocked Sites**: Sites you want to avoid
 3. Click **Save Settings**
 4. Visit job listing pages (GitHub, LinkedIn, company career pages)
@@ -50,6 +52,11 @@ A browser extension for Chrome and Firefox that automatically highlights job lis
 - greenhouse.io
 - lever.co
 - ashbyhq.com
+
+**Company Pages (Blue):**
+- careers
+- jobs
+- apply
 
 **Warning (Yellow):**
 - myworkdayjobs.com
@@ -158,4 +165,4 @@ Future improvements:
 
 ---
 
-**Happy job hunting!**
+**Happy job hunting! 🎯**
