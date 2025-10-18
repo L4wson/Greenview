@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <style>
     body {
       width: 400px;
@@ -36,11 +36,18 @@
       resize: vertical;
       min-height: 60px;
     }
-    .preferred-area { border-color: #22c55e; }
-    .company-area { border-color: #3b82f6; }
-    .warning-area { border-color: #fbbf24; }
-    .blocked-area { border-color: #ef4444; }
-    
+    .preferred-area {
+      border-color: #22c55e;
+    }
+    .company-area {
+      border-color: #3b82f6;
+    }
+    .warning-area {
+      border-color: #fbbf24;
+    }
+    .blocked-area {
+      border-color: #ef4444;
+    }
     button {
       background-color: #3b82f6;
       color: white;
@@ -71,39 +78,44 @@
       background-color: #dcfce7;
       color: #166534;
     }
+    .button-reset {
+      background-color: #6b7280;
+      margin-top: 8px;
+    }
   </style>
 </head>
 <body>
   <h2>Job Listing Highlighter</h2>
-  
+  <!--
+    Each textarea intentionally leaves its placeholder blank.  The
+    accompanying popup.js file sets the placeholder and initial value
+    dynamically based on the DEFAULT_RULES defined there.  This makes
+    updating the defaults easier because you only need to change them
+    in one place.
+  -->
   <div class="section">
     <h3><span style="color: #22c55e;">✓</span> Preferred Sites</h3>
-    <textarea id="preferred" class="preferred-area" placeholder="greenhouse.io&#10;lever.co&#10;ashbyhq.com"></textarea>
-    <div class="help-text">Green highlight - Easy application process</div>
+    <textarea id="preferred" class="preferred-area" placeholder=""></textarea>
+    <div class="help-text">Green highlight – Easy application process</div>
   </div>
-
   <div class="section">
-    <h3><span style="color: #3b82f6;">🏢</span> Company Pages</h3>
-    <textarea id="company" class="company-area" placeholder="careers&#10;jobs&#10;apply"></textarea>
-    <div class="help-text">Blue highlight - Direct company career pages</div>
+    <h3><span style="color: #3b82f6;"></span> Company Pages</h3>
+    <textarea id="company" class="company-area" placeholder=""></textarea>
+    <div class="help-text">Blue highlight – Direct company career pages</div>
   </div>
-
   <div class="section">
     <h3><span style="color: #fbbf24;">⚠️</span> Warning Sites</h3>
-    <textarea id="warning" class="warning-area" placeholder="myworkdayjobs.com&#10;successfactors.com"></textarea>
-    <div class="help-text">Yellow highlight - Tedious application process</div>
+    <textarea id="warning" class="warning-area" placeholder=""></textarea>
+    <div class="help-text">Yellow highlight – Tedious application process</div>
   </div>
-
   <div class="section">
-    <h3><span style="color: #ef4444;">🚫</span> Blocked Sites</h3>
-    <textarea id="blocked" class="blocked-area" placeholder="example-bad-ats.com"></textarea>
-    <div class="help-text">Red highlight - Sites to avoid</div>
+    <h3><span style="color: #ef4444;"></span> Blocked Sites</h3>
+    <textarea id="blocked" class="blocked-area" placeholder=""></textarea>
+    <div class="help-text">Red highlight – Sites to avoid</div>
   </div>
-
   <button id="save">Save Settings</button>
-  <button id="reset" style="background-color: #6b7280; margin-top: 8px;">Reset to Defaults</button>
+  <button id="reset" class="button-reset">Reset to Defaults</button>
   <div id="status" class="status"></div>
-
   <script src="popup.js"></script>
 </body>
 </html>

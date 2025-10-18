@@ -13,7 +13,25 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://github.com/*", "https://www.linkedin.com/*", "https://*.greenhouse.io/*", "https://*.lever.co/*", "https://*.myworkdayjobs.com/*"],
+      "matches": [
+        "https://github.com/*",
+        "https://www.linkedin.com/*",
+        "https://*.greenhouse.io/*",
+        "https://*.lever.co/*",
+        "https://*.myworkdayjobs.com/*",
+        "https://*.grnh.se/*",
+        "https://*.ashbyhq.com/*",
+        "https://*.icims.com/*",
+        "https://*.avature.net/*",
+        "https://*.taleo.net/*",
+        "https://*.oraclecloud.com/*",
+        "https://*.smartrecruiters.com/*",
+        "https://*.bamboohr.com/*",
+        "https://*.workable.com/*",
+        "https://*.eightfold.ai/*",
+        "https://*.recruiting.adp.com/*",
+        "https://*.dayforcehcm.com/*"
+      ],
       "js": ["content.js"],
       "css": ["styles.css"]
     }
@@ -23,5 +41,11 @@
     "32": "icons/favicon-32x32.png",
     "48": "icons/apple-touch-icon.png",
     "128": "icons/android-chrome-192x192.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "greenview@l4wson.dev",
+      "strict_min_version": "109.0"
+    }
   }
 }

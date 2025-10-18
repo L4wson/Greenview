@@ -1,16 +1,40 @@
 // Job Listing Highlighter Content Script
 
+// DEFAULT_RULES in popup.js (or merge into your stored highlightRules)
 const DEFAULT_RULES = {
-  preferred: ['greenhouse.io', 'lever.co', 'ashbyhq.com'],
-  warning: ['myworkdayjobs.com', 'successfactors.com', 'ultipro.com'],
-  blocked: [],
-  company: ['careers', 'jobs', 'apply']
+  preferred: [
+    'greenhouse.io',        // covers boards.greenhouse.io & job-boards.greenhouse.io
+    'lever.co',             // covers jobs.lever.co
+    'ashbyhq.com',
+    'grnh.se'               // Greenhouse short links seen in the repo
+  ],
+  warning: [
+    'myworkdayjobs.com',
+    'successfactors.com',
+    'ultipro.com',
+    // Found in the repo; suggested as warning (frictional ATS):
+    'icims.com',
+    'avature.net',
+    'taleo.net',            // often shows as *.oraclecloud.com too
+    'oraclecloud.com',
+    'smartrecruiters.com',
+    'bamboohr.com',
+    'workable.com',
+    'eightfold.ai',
+    'recruiting.adp.com',   // ADP
+    'dayforcehcm.com'       // Ceridian/Dayforce
+  ],
+  blocked: [
+    // (unchanged — add anything you want to outright hide)
+  ],
+  company: ['careers', 'jobs', 'apply'] // (unchanged)
 };
+
 
 let highlightRules = DEFAULT_RULES;
 
 // Load rules from storage
-chrome.storage.sync.get(['highlightRules'], (result) => {
+browser.storage.sync.get(['highlightRules'], (result) => {
   if (result.highlightRules) {
     highlightRules = result.highlightRules;
   }
@@ -18,7 +42,7 @@ chrome.storage.sync.get(['highlightRules'], (result) => {
 });
 
 // Listen for rule updates
-chrome.storage.onChanged.addListener((changes) => {
+browser.storage.onChanged.addListener((changes) => {
   if (changes.highlightRules) {
     highlightRules = changes.highlightRules.newValue;
     highlightLinks();

@@ -53,6 +53,9 @@ A browser extension for Chrome and Firefox that automatically highlights job lis
 - lever.co
 - ashbyhq.com
 
+Additionally included in the extension's default preferred list (see `popup.js` / `content.js`):
+- grnh.se
+
 **Company Pages (Blue):**
 - careers
 - jobs
@@ -62,6 +65,18 @@ A browser extension for Chrome and Firefox that automatically highlights job lis
 - myworkdayjobs.com
 - successfactors.com
 - ultipro.com
+
+Other warning/ATS domains included by default (from `popup.js` / `content.js`):
+- icims.com
+- avature.net
+- taleo.net
+- oraclecloud.com
+- smartrecruiters.com
+- bamboohr.com
+- workable.com
+- eightfold.ai
+- recruiting.adp.com
+- dayforcehcm.com
 
 **Blocked (Red):**
 - (none by default)
